@@ -27,33 +27,33 @@ var legend = require('./legend'); // ./ means current directory, and don't need 
 
 program
   .version(module.exports.version, '-v, --version')
-  .description('Hodor hodor hodor')
+  .description('eJobs eJobs eJobs')
   .parse(process.argv);
 
-var hodor = program.args[0];
+var eJobs = program.args[0];
 
-if( typeof(hodor) === 'undefined') {
-  console.log('HODOR:'.bold.red + ' hodor hodor hodor!'.red);
+if( typeof(eJobs) === 'undefined') {
+  console.log('EJOBS:'.bold.red + ' eJobs eJobs eJobs!'.red);
 } else {
-  if (hodor.search(".hd") > 0) { // user entered a .hd file
-    console.log('HODOR: '.bold.cyan + '\\-> '.white + hodor.white);
-    var text = fs.readFileSync(hodor).toString(); // the contents of the file
+  if (eJobs.search(".hd") > 0) { // user entered a .hd file
+    console.log('EJOBS: '.bold.cyan + '\\-> '.white + eJobs.white);
+    var text = fs.readFileSync(eJobs).toString(); // the contents of the file
     convertCode(text);
   } else { // user entered something apart from a hd file
-    console.log('HODOR:'.bold.red + ' hodor hodor!'.red);
+    console.log('EJOBS:'.bold.red + ' eJobs eJobs!'.red);
   }
 }
 
 function convertCode (text) {
-  var hodorText = text;
+  var eJobsText = text;
   
   for (i = (legend.length - 1); i >= 0; i--){
     var query = legend[i];
 
-    hodorText = hodorText.replaceAll(query.replace, query.search);
+    eJobsText = eJobsText.replaceAll(query.replace, query.search);
   }
 
-  hodorText = hodorText.replace(/hello,? world!?/ig, 'HODOR');
+  eJobsText = eJobsText.replace(/hello,? world!?/ig, 'EJOBS');
 
-  eval(hodorText);
+  eval(eJobsText);
 }
